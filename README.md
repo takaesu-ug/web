@@ -34,4 +34,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [ ] マークダウンブログ(記事管理を Notion とかでいずれやりたい)
 - [ ] タグ機能
 - [ ] タグによる記事一覧
-- [ ] RSSフィード
+- [ ] RSS フィード
