@@ -6,6 +6,9 @@ extends:
   - 'plugin:react/recommended'
   - 'plugin:@typescript-eslint/recommended'
   - 'plugin:prettier/recommended'
+  - 'plugin:import/errors'
+  - 'plugin:import/warnings'
+  - 'plugin:import/typescript'
 parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaFeatures:
@@ -19,3 +22,14 @@ rules:
   react/react-in-jsx-scope: off
   '@typescript-eslint/explicit-module-boundary-types': off
   '@typescript-eslint/no-explicit-any': off
+  import/order: # sort to import clause
+    - error
+    - newlines-between: never
+      alphabetize:
+        order: asc
+settings:
+  import/parsers:
+    '@typescript-eslint/parser': ['ts', 'tsx']
+  import/resolver:
+    typescript:
+      alwaysTryTypes: true
