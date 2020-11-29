@@ -1,6 +1,6 @@
 import { CssBaseline } from '@material-ui/core'
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
-import { AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 import { theme } from '@/styles/theme'
 
