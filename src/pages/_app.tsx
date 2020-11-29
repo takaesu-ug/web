@@ -30,15 +30,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  return (
-    <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
-  )
-}
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  <>
+    <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  </>
+)
 
 export default MyApp
