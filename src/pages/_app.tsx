@@ -4,17 +4,15 @@ import { AppProps } from 'next/app'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 import { theme } from '@/styles/theme'
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  return (
-    <StylesProvider injectFirst>
-      <MuiThemeProvider theme={theme}>
-        <StyledComponentsThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-        </StyledComponentsThemeProvider>
-      </MuiThemeProvider>
-    </StylesProvider>
-  )
-}
+const MyApp = ({ Component, pageProps }: AppProps) => (
+  <StylesProvider injectFirst>
+    <MuiThemeProvider theme={theme}>
+      <StyledComponentsThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </StyledComponentsThemeProvider>
+    </MuiThemeProvider>
+  </StylesProvider>
+)
 
 export default MyApp
