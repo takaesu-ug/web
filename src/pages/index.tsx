@@ -1,4 +1,12 @@
+import { Paper } from '@material-ui/core'
 import Head from 'next/head'
+import styled from 'styled-components'
+
+const PaperItem = styled(Paper)`
+  padding: 1rem;
+  margin-left: 0;
+  /* list-style-type: none; */
+`
 
 export default function Home() {
   return (
@@ -11,8 +19,14 @@ export default function Home() {
 
         <main>
           <h1>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
+            ウェルカム<a href="https://nextjs.org">Next.js!</a>
           </h1>
+
+          <ul>
+            <PaperItem component="li" variant="outlined">
+              テスト
+            </PaperItem>
+          </ul>
 
           <p>
             Get started by editing <code>pages/index.js</code>
