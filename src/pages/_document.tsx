@@ -1,15 +1,21 @@
-import Document, { DocumentContext } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import { ServerStyleSheets as MuiServerStyleSheets } from '@material-ui/core'
+import type { DocumentContext } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { ServerStyleSheet as StyledComponentsServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet()
+    const styledComponentsServerSheet = new StyledComponentsServerStyleSheet()
+    const muiServerStyleSheets = new MuiServerStyleSheets()
     const originalRenderPage = ctx.renderPage
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (props) =>
+            styledComponentsServerSheet.collectStyles(
+              muiServerStyleSheets.collect(<App {...props} />)
+            ),
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -18,12 +24,25 @@ export default class MyDocument extends Document {
         styles: (
           <>
             {initialProps.styles}
-            {sheet.getStyleElement()}
+            {styledComponentsServerSheet.getStyleElement()}
+            {muiServerStyleSheets.getStyleElement()}
           </>
         ),
       }
     } finally {
-      sheet.seal()
+      styledComponentsServerSheet.seal()
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
