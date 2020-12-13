@@ -42,3 +42,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   - next+styled-components+tailwindcss
   - autoplefixer は styled-component があるから不要かな
   - https://qiita.com/macololidoll/items/5cca28d70ce6ce762e30
+
+## メモ
+
+- [eslint-plugin-prettier を ESLint から 分離するサンプル – Intellij IDEA の設定変更も | Developers.IO](https://dev.classmethod.jp/articles/eslint-and-prettier/)
