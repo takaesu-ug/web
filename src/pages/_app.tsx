@@ -11,9 +11,6 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
   }
-  body {
-    font-size: 1.6rem;
-  }
 `
 
 const MyApp = ({ Component, pageProps }: AppProps) => (

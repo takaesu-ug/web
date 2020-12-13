@@ -15,7 +15,9 @@ const theme = createMuiTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
-    fontSize: 14,
+    // https://material-ui.com/ja/customization/typography/#html-font-size
+    // Tell Material-UI what's the font-size on the html element is.
+    htmlFontSize: 10,
   },
 })
 
