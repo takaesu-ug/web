@@ -24,8 +24,8 @@ export default class MyDocument extends Document {
         styles: (
           <>
             {initialProps.styles}
-            {styledComponentsServerSheet.getStyleElement()}
             {muiServerStyleSheets.getStyleElement()}
+            {styledComponentsServerSheet.getStyleElement()}
           </>
         ),
       }
