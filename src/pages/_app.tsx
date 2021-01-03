@@ -13,16 +13,16 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <StylesProvider injectFirst>
-    <MuiThemeProvider theme={theme}>
-      <StyledComponentsThemeProvider theme={theme}>
-        <CssBaseline />
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </StyledComponentsThemeProvider>
-    </MuiThemeProvider>
-  </StylesProvider>
-)
-
-export default MyApp
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <StylesProvider injectFirst>
+      <MuiThemeProvider theme={theme}>
+        <StyledComponentsThemeProvider theme={theme}>
+          <CssBaseline />
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </StyledComponentsThemeProvider>
+      </MuiThemeProvider>
+    </StylesProvider>
+  )
+}
