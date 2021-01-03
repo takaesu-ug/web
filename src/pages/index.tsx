@@ -13,7 +13,7 @@ const MyAvatar = styled(Avatar)`
   height: 15rem;
 `
 
-export default function RootIndex() {
+const RootIndex = () => {
   return (
     <BasicLayout>
       <main>
@@ -29,3 +29,5 @@ export default function RootIndex() {
     </BasicLayout>
   )
 }
+
+export default RootIndex

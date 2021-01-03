@@ -1,6 +1,7 @@
 import { CssBaseline } from '@material-ui/core'
 import { StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
 import type { AppProps } from 'next/app'
+import React from 'react'
 import {
   createGlobalStyle,
   ThemeProvider as StyledComponentsThemeProvider,
@@ -13,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export default function App({ Component, pageProps }: AppProps) {
+const App: React.VFC<AppProps> = ({ Component, pageProps }) => {
   return (
     <StylesProvider injectFirst>
       <MuiThemeProvider theme={theme}>
@@ -26,3 +27,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </StylesProvider>
   )
 }
+
+export default App
