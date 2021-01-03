@@ -3,7 +3,7 @@ import type { DocumentContext } from 'next/document'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet as StyledComponentsServerStyleSheet } from 'styled-components'
 
-export default class MyDocument extends Document {
+class AppDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const styledComponentsServerSheet = new StyledComponentsServerStyleSheet()
     const muiServerStyleSheets = new MuiServerStyleSheets()
@@ -46,3 +46,5 @@ export default class MyDocument extends Document {
     )
   }
 }
+
+export default AppDocument
